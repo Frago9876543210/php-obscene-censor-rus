@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Frago9876543210;
+
 
 class CensorFilter{
 	const P = 'пПnPp';
@@ -120,5 +123,9 @@ class CensorFilter{
 			$bad[] = str_repeat($replace, mb_strlen($word));
 		}
 		return str_replace($m[1], $bad, $text);
+	}
+
+	public static function isAllowed(string $text) : bool{
+		return $text === self::filterText($text);
 	}
 }
