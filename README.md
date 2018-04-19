@@ -1,47 +1,16 @@
 php-obscene-censor-rus
 ======================
-[![Build Status](https://travis-ci.org/vearutop/php-obscene-censor-rus.png?branch=master)](https://travis-ci.org/vearutop/php-obscene-censor-rus) [![Total Downloads](https://poser.pugx.org/vearutop/php-obscene-censor-rus/downloads)](https://packagist.org/packages/vearutop/php-obscene-censor-rus)
 
-Класс для фильтрации нецензурных выражений (матов).
-
-Анализ на основе регулярных выражений с списком исключений, совместим с UTF8.
+Класс для фильтрации нецензурных выражений.
 
 Использование:
 
 ```php
-$text = 'Да пошел ты нахуй и в пиzdu huesos, ушлепок ебаный, ебать мой вялый хуй!
-Мой дед ветеран твоего деда педрилу ебал :( Хуячечки';
+$text = "Да пошел ты нахуй и в пиzdu huesos, ушлепок ебаный, ебать мой вялый хуй!
+Мой дед ветеран твоего деда педрилу ебал :( Хуячечки\n";
 
-ObsceneCensorRus::filterText($text);
-
-echo $text;
+echo CensorFilter::filterText($text);
 //Да пошел ты ***** и в ***** ******, ушлепок ******, ***** мой вялый ***!
-//Мой дед ветеран твоего деда ******* **** :( ********
+//Мой дед ветеран ****** деда ******* **** :( ********
+var_dump(CensorFilter::isAllowed($text)); //false
 ```
-
-```php
-$text = ObsceneCensorRus::getFiltered($text);
-```
-
-```php
-var_dump(ObsceneCensorRus::isAllowed($text));
-// false
-```
-
-Вторым параметром можно указать кодировку если она отличается от UTF8
-```php
-ObsceneCensorRus::getFiltered('кто прочитает тот лол', 'CP1251')
-```
-
-Установка:
-```
-composer require vearutop/php-obscene-censor-rus
-```
-
-Тесты:
-```
-php phpunit.phar ./tests
-```
-
-
-Цензура, антимат, матерщинные слова, фильтр мата, обсценная лексика, нецензурная брань, треугольные сиськи.
