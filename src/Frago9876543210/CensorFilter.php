@@ -16,7 +16,7 @@ class CensorFilter{
 	const O = 'оОoO0';
 	const L = 'лЛlL';
 	const S = 'сСcCsS';
-	const A = 'аАaA';
+	const A = 'аАaA@';
 	const N = 'нНhH';
 	const G = 'гГgG';
 	const CH = 'чЧ4';
@@ -35,7 +35,6 @@ class CensorFilter{
 	const Y = 'ыЫ';
 	const SH = "шшЩЩ";
 	const V = "вВvVBb";
-
 	const EXCEPTIONS = [
 		'команд', 'рубл', 'премь', 'оскорб', 'краснояр', 'бояр', 'ноябр', 'карьер', 'мандат',
 		'употр', 'плох', 'интер', 'веер', 'фаер', 'феер', 'hyundai', 'тату', 'браконь',
@@ -44,7 +43,8 @@ class CensorFilter{
 		'kres', 'глуб', 'ebay', 'eeb', 'shuy', 'ансам', 'cayenne', 'ain', 'oin', 'тряс', 'ubu', 'uen',
 		'uip', 'oup', 'кораб', 'боеп', 'деепр', 'хульс', 'een', 'ee6', 'ein', 'сугуб', 'карб', 'гроб',
 		'лить', 'рсук', 'влюб', 'хулио', 'ляп', 'граб', 'ибог', 'вело', 'ебэ', 'перв', 'eep', 'ying',
-		'laun', 'чаепитие', 'oub', 'мандарин', 'гондольер'
+		'laun', 'чаепитие', 'oub', 'мандарин', 'гондольер', 'гоша', 'фраг', 'гав', 'говор', 'гавор',
+		'помога', 'памага', 'гов', 'огонь', 'o1b2', 'ведро', 'догон'
 	];
 
 	public static function filterText(string $text, string $replace = "*") : string{
@@ -93,14 +93,13 @@ class CensorFilter{
 |
 	\w*[' . self::S . '][' . self::E . '][' . self::K . '][' . self::S . ']\w* # секс
 |
-	\w*[' . self::G . ' ][' . self::A . self::O . '][' . self::V . ']*\w* # говно
+	\w*[' . self::G . ' ][' . self::A . self::O . '][' . self::V . '][' . self::N . ']*\w* # говно
 |
-	\w*[' . self::G . '][' . self::A . self::O . '][' . self::D . ']*\w* #гондон
+	\w*[' . self::G . '][' . self::A . self::O . '][' . self::N . '][' . self::D . ']*\w* #гондон
 |
 	\w*[' . self::D . '][' . self::R . '][' . self::O . '][' . self::CH . ']*\w* #дрочить
 )\b
 /xu', $text, $m);
-
 		if(($count = count($m[1])) < 0){
 			return $text;
 		}
@@ -116,7 +115,6 @@ class CensorFilter{
 				$m[1][$i] = str_replace([' ', ',', ';', '.', '!', '-', '?', "\t", "\n"], '', $m[1][$i]);
 			}
 		}
-
 		$m[1] = array_unique($m[1]);
 		$bad = [];
 		foreach($m[1] as $word){
