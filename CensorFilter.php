@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Frago9876543210\Core\chat;
+namespace Frago9876543210\Core\chat\filter;
 
 
 class CensorFilter{
