@@ -6,37 +6,37 @@ namespace Frago9876543210;
 
 
 class CensorFilter{
-	const P = 'пПnPp';
-	const I = 'иИiI1u';
-	const E = 'еЕeE';
-	const D = 'дДdD';
-	const Z = 'зЗ3zZ3';
-	const M = 'мМmM';
-	const U = 'уУyYuU';
-	const O = 'оОoO0';
-	const L = 'лЛlL';
-	const S = 'сСcCsS';
-	const A = 'аАaA@';
-	const N = 'нНhH';
-	const G = 'гГgG';
-	const CH = 'чЧ4';
-	const K = 'кКkK';
-	const C = 'цЦcC';
-	const R = 'рРpPrR';
-	const H = 'хХxXhH';
-	const YI = 'йЙy';
-	const YA = 'яЯ';
-	const YO = 'ёЁ';
-	const YU = 'юЮ';
-	const B = 'бБ6bB';
-	const T = 'тТtT';
-	const HS = 'ъЪ';
-	const SS = 'ьЬ';
-	const Y = 'ыЫ';
-	const SH = "шшЩЩ";
-	const V = "вВvVBb";
-	const EXCEPTIONS = [
-		'команд','комманд', 'рубл', 'премь', 'оскорб', 'краснояр', 'бояр', 'ноябр', 'карьер', 'мандат',
+	private const P = 'пПnPp';
+	private const I = 'иИiI1u';
+	private const E = 'еЕeE';
+	private const D = 'дДdD';
+	private const Z = 'зЗ3zZ3';
+	private const M = 'мМmM';
+	private const U = 'уУyYuU';
+	private const O = 'оОoO0';
+	private const L = 'лЛlL';
+	private const S = 'сСcCsS';
+	private const A = 'аАaA@';
+	private const N = 'нНhH';
+	private const G = 'гГgG';
+	private const CH = 'чЧ4';
+	private const K = 'кКkK';
+	private const C = 'цЦcC';
+	private const R = 'рРpPrR';
+	private const H = 'хХxXhH';
+	private const YI = 'йЙy';
+	private const YA = 'яЯ';
+	private const YO = 'ёЁ';
+	private const YU = 'юЮ';
+	private const B = 'бБ6bB';
+	private const T = 'тТtT';
+	private const HS = 'ъЪ';
+	private const SS = 'ьЬ';
+	private const Y = 'ыЫ';
+	private const SH = "шшЩЩ";
+	private const V = "вВvVBb";
+	private const EXCEPTIONS = [
+		'команд', 'комманд', 'рубл', 'премь', 'оскорб', 'краснояр', 'бояр', 'ноябр', 'карьер', 'мандат',
 		'употр', 'плох', 'интер', 'веер', 'фаер', 'феер', 'hyundai', 'тату', 'браконь',
 		'roup', 'сараф', 'держ', 'слаб', 'ридер', 'истреб', 'потреб', 'коридор', 'sound', 'дерг',
 		'подоб', 'коррид', 'дубл', 'курьер', 'экст', 'try', 'enter', 'oun', 'aube', 'ibarg', '16',
