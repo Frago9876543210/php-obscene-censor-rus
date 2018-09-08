@@ -96,8 +96,6 @@ class CensorFilter{
 	\w*[' . self::G . ' ][' . self::A . self::O . '][' . self::V . '][' . self::N . ']*\w* # говно
 |
 	\w*[' . self::G . '][' . self::A . self::O . '][' . self::N . '][' . self::D . ']*\w* #гондон
-|
-	\w*[' . self::D . '][' . self::R . '][' . self::O . '][' . self::CH . ']*\w* #дрочить
 )\b
 /xu', $text, $m);
 		if(($count = count($m[1])) < 0){
